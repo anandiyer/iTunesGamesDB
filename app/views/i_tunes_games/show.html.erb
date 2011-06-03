@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Itunesid:</b>
+  <%= @i_tunes_game.iTunesId %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @i_tunes_game.rating %>
+</p>
+
+<p>
+  <b>Uid:</b>
+  <%= @i_tunes_game.uid %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @i_tunes_game.username %>
+</p>
+
+<p>
+  <b>Helpful:</b>
+  <%= @i_tunes_game.helpful %>
+</p>
+
+<p>
+  <b>Numhelpful:</b>
+  <%= @i_tunes_game.numhelpful %>
+</p>
+
+<p>
+  <b>Review:</b>
+  <%= @i_tunes_game.review %>
+</p>
+
+
+<%= link_to 'Edit', edit_i_tunes_game_path(@i_tunes_game) %> |
+<%= link_to 'Back', i_tunes_games_path %>

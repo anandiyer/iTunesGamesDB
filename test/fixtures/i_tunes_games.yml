@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  iTunesId: 
+  rating: 
+  uid: 
+  username: MyString
+  helpful: 
+  numhelpful: 
+  review: MyText
+
+two:
+  iTunesId: 
+  rating: 
+  uid: 
+  username: MyString
+  helpful: 
+  numhelpful: 
+  review: MyText

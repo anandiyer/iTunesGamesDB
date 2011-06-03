@@ -1,0 +1,45 @@
+<%= form_for(@i_tunes_game) do |f| %>
+  <% if @i_tunes_game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@i_tunes_game.errors.count, "error") %> prohibited this i_tunes_game from being saved:</h2>
+
+      <ul>
+      <% @i_tunes_game.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :iTunesId %><br />
+    <%= f.text_field :iTunesId %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :uid %><br />
+    <%= f.text_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :helpful %><br />
+    <%= f.text_field :helpful %>
+  </div>
+  <div class="field">
+    <%= f.label :numhelpful %><br />
+    <%= f.text_field :numhelpful %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
