@@ -3,25 +3,11 @@
 <table>
   <tr>
     <th>iTunesId</th>
-    <th>Stars</th>
-    <th>UserId</th>
-    <th>UserName</th>
-    <th>Helpful</th>
-    <th>Review</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @i_tunes_games.each do |i_tunes_game| %>
   <tr>
-    <td><%= i_tunes_game.iTunesId %></td>
-    <td><%= i_tunes_game.rating %></td>
-    <td><%= i_tunes_game.uid %></td>
-    <td><%= i_tunes_game.username %></td>
-    <td><%= i_tunes_game.helpful %>/<%= i_tunes_game.numhelpful %></td>
-    <td><%= i_tunes_game.review %></td>
-    <td><%= link_to 'Show', i_tunes_game %></td>
+    <td><%= link_to i_tunes_game_path(@i_tunes_game) %></td>
   </tr>
 <% end %>
 </table>
