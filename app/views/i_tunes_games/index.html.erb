@@ -7,7 +7,7 @@
 
 <% @i_tunes_games.each do |i_tunes_game| %>
   <tr>
-    <td><%= link_to i_tunes_game_path(@i_tunes_game) %></td>
+    <td><a href="/itunes/<%= i_tunes_game.iTunesId %>"><%= i_tunes_game.iTunesId %></a></td>
   </tr>
 <% end %>
 </table>
