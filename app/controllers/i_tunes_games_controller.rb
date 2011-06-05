@@ -2,7 +2,7 @@ class ITunesGamesController < ApplicationController
   # GET /i_tunes_games
   # GET /i_tunes_games.xml
   def index
-    @i_tunes_games = ITunesGame.all(:select => "DISTINCT \"i_tunes_games\".\"iTunesId\"", :limit => 100)
+    @i_tunes_games = ITunesGame.paginate(:page => params[:page], :select => "DISTINCT \"i_tunes_games\".\"iTunesId\"")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,8 +11,19 @@ class ITunesGamesController < ApplicationController
     end
   end
 
+  def details
+    @i_tunes_games = ITunesGame.paginate(:page => params[:page],
+      :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @i_tunes_games }
+      format.json  { render :json => @i_tunes_games }
+    end
+  end
+
   def user
-    @i_tunes_games = ITunesGame.find(:all, 
+    @i_tunes_games = ITunesGame.paginate(:page => params[:page],
       :conditions => "\"i_tunes_games\".\"uid\" = " + params[:id])
 
     respond_to do |format|
@@ -23,7 +34,7 @@ class ITunesGamesController < ApplicationController
   end
 
   def itunes
-    @i_tunes_games = ITunesGame.find(:all, 
+    @i_tunes_games = ITunesGame.paginate(:page => params[:page],
       :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id])
 
     respond_to do |format|
@@ -36,7 +47,7 @@ class ITunesGamesController < ApplicationController
   # GET /i_tunes_games/1
   # GET /i_tunes_games/1.xml
   def show
-    @i_tunes_games = ITunesGame.find(:all, 
+    @i_tunes_games = ITunesGame.paginate(:page => params[:page],
       :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id])
 
     respond_to do |format|

@@ -6,7 +6,6 @@
     <th>Review</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @i_tunes_games.each do |i_tunes_game| %>
@@ -15,9 +14,10 @@
 	<td><a href="/itunes/<%= i_tunes_game.iTunesId %>"><%= i_tunes_game.iTunesId %></a></td>
     <td><%= i_tunes_game.helpful %>/<%= i_tunes_game.numhelpful %></td>
     <td><%= i_tunes_game.review %></td>
-    <td><%= link_to 'Show', i_tunes_game %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
+<%= will_paginate @i_tunes_games %>
+<%= page_entries_info @i_tunes_games %>
