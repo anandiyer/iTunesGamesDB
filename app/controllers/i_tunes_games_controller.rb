@@ -2,12 +2,23 @@ class ITunesGamesController < ApplicationController
   # GET /i_tunes_games
   # GET /i_tunes_games.xml
   def index
-    @i_tunes_games = ITunesGame.all
+    @i_tunes_games = ITunesGame.all(:limit => 100)
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @i_tunes_games }
       format.json  { render :json  => @i_tunes_games }
+    end
+  end
+
+  def itunes
+    @i_tunes_games = ITunesGame.find(:all, 
+      :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @i_tunes_games }
+      format.json  { render :json => @i_tunes_games }
     end
   end
 

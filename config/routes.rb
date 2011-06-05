@@ -1,6 +1,7 @@
 ITunesGamesDB::Application.routes.draw do
   root :to => "i_tunes_games#index"
   resources :i_tunes_games
+  match "/itunes/:id" => "i_tunes_games#itunes"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

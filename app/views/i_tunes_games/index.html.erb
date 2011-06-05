@@ -1,13 +1,12 @@
-<h1>Listing i_tunes_games</h1>
+<h1>Games</h1>
 
 <table>
   <tr>
-    <th>Itunesid</th>
-    <th>Rating</th>
-    <th>Uid</th>
-    <th>Username</th>
+    <th>iTunesId</th>
+    <th>Stars</th>
+    <th>UserId</th>
+    <th>UserName</th>
     <th>Helpful</th>
-    <th>Numhelpful</th>
     <th>Review</th>
     <th></th>
     <th></th>
@@ -20,16 +19,11 @@
     <td><%= i_tunes_game.rating %></td>
     <td><%= i_tunes_game.uid %></td>
     <td><%= i_tunes_game.username %></td>
-    <td><%= i_tunes_game.helpful %></td>
-    <td><%= i_tunes_game.numhelpful %></td>
+    <td><%= i_tunes_game.helpful %>/<%= i_tunes_game.numhelpful %></td>
     <td><%= i_tunes_game.review %></td>
     <td><%= link_to 'Show', i_tunes_game %></td>
-    <td><%= link_to 'Edit', edit_i_tunes_game_path(i_tunes_game) %></td>
-    <td><%= link_to 'Destroy', i_tunes_game, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New I tunes game', new_i_tunes_game_path %>
