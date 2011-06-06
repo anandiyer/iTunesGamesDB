@@ -11,7 +11,7 @@ class ITunesGamesController < ApplicationController
     end
   end
 
-  def details
+  def summary
     @i_tunes_games = ITunesGame.paginate(:page => params[:page],
       :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id])
 

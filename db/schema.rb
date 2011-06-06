@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110603050407) do
+ActiveRecord::Schema.define(:version => 20110606145514) do
 
   create_table "i_tunes_games", :force => true do |t|
     t.integer  "iTunesId"

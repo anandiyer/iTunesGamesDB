@@ -1,0 +1,13 @@
+<h1>Games</h1>
+
+<table>
+<% @iTunesGameSummaries.each do |i| %>
+  <tr>
+    <td>i.iTunesId</td>
+	<td>i.count_5_star</td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @iTunesGameSummaries %>
+<%= page_entries_info @iTunesGameSummaries %>
+<br />
