@@ -2,7 +2,9 @@ class ITunesGamesController < ApplicationController
   # GET /i_tunes_games
   # GET /i_tunes_games.xml
   def index
-    @i_tunes_games = ITunesGame.paginate(:page => params[:page], :select => "DISTINCT \"i_tunes_games\".\"iTunesId\"")
+    @i_tunes_games = ITunesGame.paginate(:page => params[:page], 
+      :select => "DISTINCT \"i_tunes_games\".\"iTunesId\"", 
+      :limit => 1000)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +26,8 @@ class ITunesGamesController < ApplicationController
 
   def user
     @i_tunes_games = ITunesGame.paginate(:page => params[:page],
-      :conditions => "\"i_tunes_games\".\"uid\" = " + params[:id])
+      :conditions => "\"i_tunes_games\".\"uid\" = " + params[:id],
+      :limit => 1000)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +38,8 @@ class ITunesGamesController < ApplicationController
 
   def itunes
     @i_tunes_games = ITunesGame.paginate(:page => params[:page],
-      :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id])
+      :conditions => "\"i_tunes_games\".\"iTunesId\" = " + params[:id],
+      :limit => 1000)
 
     respond_to do |format|
       format.html # show.html.erb
